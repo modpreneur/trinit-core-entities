@@ -1,5 +1,6 @@
 {
   "name": "trinity/trinity-core-entities",
+
   "description": "Trinity Framework",
   "type": "library",
   "license": "MIT",
