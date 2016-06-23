@@ -1,0 +1,41 @@
+{
+  "name": "trinity/trinity-core-entities",
+  "description": "Trinity Framework",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tomas Jancar",
+      "email": "jancar@modpreneur.com"
+    }
+  ],
+  "require": {
+    "php": ">=7",
+    "friendsofsymfony/user-bundle": "dev-master",
+    "knplabs/doctrine-behaviors": "~1.2",
+    "doctrine/orm": "~2.5",
+    "doctrine/doctrine-bundle": "~1.6",
+    "doctrine/data-fixtures": "~1",
+    "symfony/monolog-bundle": "~2.8",
+    "symfony/validator": "~3",
+    "jms-serializer/serializer": "~1"
+  },
+
+  "autoload": {
+
+    "psr-4": {
+      "Trinity\\Component\\EntityCore\\": ""
+    },
+
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+
+  "minimum-stability": "stable",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
