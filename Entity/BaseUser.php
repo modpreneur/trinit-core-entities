@@ -4,7 +4,7 @@ namespace Trinity\Component\EntityCore\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User;
-use Knp\DoctrineBehaviors\Model\Timestampable\TimestampableMethods;
+use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -18,8 +18,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class BaseUser extends User implements EntityInterface
 {
-
-    use TimestampableMethods;
+    use Timestampable;
 
     /**
      * @ORM\Id
