@@ -3749,12 +3749,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/modpreneur/trinity-core-interfaces.git",
-                "reference": "34212c9af8b95a8a01cc5f01d43db1e7d908b63e"
+                "reference": "f8dd586340a70214f2eef1449f99ce2b2a49f6c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modpreneur/trinity-core-interfaces/zipball/34212c9af8b95a8a01cc5f01d43db1e7d908b63e",
-                "reference": "34212c9af8b95a8a01cc5f01d43db1e7d908b63e",
+                "url": "https://api.github.com/repos/modpreneur/trinity-core-interfaces/zipball/f8dd586340a70214f2eef1449f99ce2b2a49f6c1",
+                "reference": "f8dd586340a70214f2eef1449f99ce2b2a49f6c1",
                 "shasum": ""
             },
             "require": {
@@ -3771,7 +3771,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Trinity\\Component\\Core\\Interfaces\\": ""
+                    "Trinity\\Component\\Core\\": ""
                 },
                 "exclude-from-classmap": [
                     "/Tests/"
@@ -3788,7 +3788,7 @@
                 }
             ],
             "description": "Trinity Framework",
-            "time": "2016-06-27 08:49:57"
+            "time": "2016-06-27 11:41:12"
         },
         {
             "name": "twig/twig",

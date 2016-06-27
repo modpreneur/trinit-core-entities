@@ -7,13 +7,14 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
+use Trinity\Component\Core\Interfaces\ProductInterface;
 
 /**
  * Class BaseProduct.
  *
  * @UniqueEntity(fields="name")
  */
-class BaseProduct implements EntityInterface
+class BaseProduct implements EntityInterface, ProductInterface
 {
     use ORMBehaviors\Timestampable\Timestampable;
 

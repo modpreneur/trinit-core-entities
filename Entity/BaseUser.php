@@ -8,6 +8,7 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
+use Trinity\Component\Core\Interfaces\UserInterface;
 
 /**
  * Class BaseUser.
@@ -17,7 +18,7 @@ use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
  * @UniqueEntity(fields={"username"})
  * @UniqueEntity(fields={"email"})
  */
-class BaseUser extends User implements EntityInterface
+class BaseUser extends User implements EntityInterface, UserInterface
 {
     use Timestampable;
 
