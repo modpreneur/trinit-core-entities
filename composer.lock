@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c3123fb22b042e9ab866e48debe7b97a",
-    "content-hash": "9be3f9c91194988d71bf85dbb1df2d6a",
+    "hash": "75d3049f74c787d3a339642348a393a2",
+    "content-hash": "e1dc17c4b02e28acfbdf7d1a8c239873",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1204,7 +1204,7 @@
             ],
             "authors": [
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 }
             ],
@@ -3744,6 +3744,53 @@
             "time": "2016-05-24 10:06:56"
         },
         {
+            "name": "trinity/core-interfaces",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/modpreneur/trinity-core-interfaces.git",
+                "reference": "ebfaf1c1a3951fc38216e9c345fc267cf4f5e756"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/modpreneur/trinity-core-interfaces/zipball/ebfaf1c1a3951fc38216e9c345fc267cf4f5e756",
+                "reference": "ebfaf1c1a3951fc38216e9c345fc267cf4f5e756",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Trinity\\Component\\Core\\Interfaces\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomas Jancar",
+                    "email": "jancar@modpreneur.com"
+                }
+            ],
+            "description": "Trinity Framework",
+            "time": "2016-06-27 08:42:34"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.24.1",
             "source": {
@@ -3809,7 +3856,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20
+        "friendsofsymfony/user-bundle": 20,
+        "trinity/core-interfaces": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

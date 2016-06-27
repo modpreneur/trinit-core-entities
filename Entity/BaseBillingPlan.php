@@ -5,13 +5,14 @@ namespace Trinity\Component\EntityCore\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
+use Trinity\Component\Core\Interfaces\BillingPlanInterface;
 use Trinity\Component\EntityCore\Traits\ExcludeBlameableTrait;
 
 /**
  * BillingPlan.
  *
  */
-class BaseBillingPlan implements EntityInterface
+class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 {
     use ORMBehaviors\Timestampable\Timestampable,
         ORMBehaviors\Blameable\Blameable,
