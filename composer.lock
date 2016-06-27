@@ -3749,12 +3749,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/modpreneur/trinity-core-interfaces.git",
-                "reference": "ebfaf1c1a3951fc38216e9c345fc267cf4f5e756"
+                "reference": "34212c9af8b95a8a01cc5f01d43db1e7d908b63e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modpreneur/trinity-core-interfaces/zipball/ebfaf1c1a3951fc38216e9c345fc267cf4f5e756",
-                "reference": "ebfaf1c1a3951fc38216e9c345fc267cf4f5e756",
+                "url": "https://api.github.com/repos/modpreneur/trinity-core-interfaces/zipball/34212c9af8b95a8a01cc5f01d43db1e7d908b63e",
+                "reference": "34212c9af8b95a8a01cc5f01d43db1e7d908b63e",
                 "shasum": ""
             },
             "require": {
@@ -3788,7 +3788,7 @@
                 }
             ],
             "description": "Trinity Framework",
-            "time": "2016-06-27 08:42:34"
+            "time": "2016-06-27 08:49:57"
         },
         {
             "name": "twig/twig",

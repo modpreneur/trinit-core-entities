@@ -5,6 +5,7 @@ namespace Trinity\Component\EntityCore\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
 use Trinity\Component\Core\Interfaces\BillingPlanInterface;
 use Trinity\Component\EntityCore\Traits\ExcludeBlameableTrait;
 
