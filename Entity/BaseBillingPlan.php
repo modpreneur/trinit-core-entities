@@ -7,6 +7,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
 use Trinity\Component\Core\Interfaces\BillingPlanInterface;
+use Trinity\Component\Core\Interfaces\ProductInterface;
 use Trinity\Component\EntityCore\Traits\ExcludeBlameableTrait;
 
 /**
@@ -128,9 +129,9 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 
 
     /**
-     * @return BaseProduct
+     * @return ProductInterface
      */
-    public function getProduct()
+    public function getProduct() : ProductInterface
     {
         return $this->product;
     }
