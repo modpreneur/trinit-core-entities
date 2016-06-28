@@ -131,7 +131,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @return ProductInterface
      */
-    public function getProduct() : ProductInterface
+    public function getProduct()
     {
         return $this->product;
     }
