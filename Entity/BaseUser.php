@@ -43,12 +43,11 @@ class BaseUser extends User implements EntityInterface
      * @ORM\Column(type="string", length=50)
      *
      * @Assert\Length(
-     *      min = 2,
-     *      max = 50,
-     *      minMessage = "Your username name must be at least {{ limit }} characters long",
-     *      maxMessage = "Your username name cannot be longer than {{ limit }} characters"
+     *     min = 2,
+     *     max = 50,
+     *     minMessage = "Username name must be at least {{ limit }} characters long",
+     *     maxMessage = "Username name cannot be longer than {{ limit }} characters"
      * )
-     *
      */
     protected $username;
 
@@ -57,10 +56,10 @@ class BaseUser extends User implements EntityInterface
      * @ORM\Column(type="string", length=50, nullable=true)
      *
      * @Assert\Length(
-     *      min = 2,
-     *      max = 50,
-     *      minMessage = "Your username name must be at least {{ limit }} characters long",
-     *      maxMessage = "First name cannot be longer than {{ limit }} characters"
+     *     min = 2,
+     *     max = 50,
+     *     minMessage = "First name must be at least {{ limit }} characters long",
+     *     maxMessage = "First name cannot be longer than {{ limit }} characters"
      * )
      */
     protected $firstName;
@@ -70,8 +69,10 @@ class BaseUser extends User implements EntityInterface
      * @ORM\Column(type="string", length=50, nullable=true)
      *
      * @Assert\Length(
-     *      max = 50,
-     *      maxMessage = "Last name cannot be longer than {{ limit }} characters"
+     *     min = 2,
+     *     max = 50,
+     *     minMessage = "Last name must be at least {{ limit }} characters long",
+     *     maxMessage = "Last name cannot be longer than {{ limit }} characters"
      * )
      */
     protected $lastName;
