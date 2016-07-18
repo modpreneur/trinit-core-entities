@@ -8,7 +8,6 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
-use Trinity\Component\Core\Interfaces\UserInterface;
 
 /**
  * Class BaseUser.
@@ -18,7 +17,7 @@ use Trinity\Component\Core\Interfaces\UserInterface;
  * @UniqueEntity(fields={"username"})
  * @UniqueEntity(fields={"email"})
  */
-class BaseUser extends User implements EntityInterface, UserInterface
+class BaseUser extends User implements EntityInterface
 {
     use Timestampable;
 
@@ -41,15 +40,13 @@ class BaseUser extends User implements EntityInterface, UserInterface
 
     /**
      * @var string
-     *
-     * @Assert\MinLength(
-     *     limit=2,
-     *     message="Your username must have at least {{ limit }} characters."
-     * )
+     * @ORM\Column(type="string", length=50)
      *
      * @Assert\Length(
-     *      max = 255,
-     *      maxMessage = "First name cannot be longer than {{ limit }} characters"
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Your username name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your username name cannot be longer than {{ limit }} characters"
      * )
      *
      */
@@ -57,10 +54,12 @@ class BaseUser extends User implements EntityInterface, UserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      *
      * @Assert\Length(
-     *      max = 255,
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Your username name must be at least {{ limit }} characters long",
      *      maxMessage = "First name cannot be longer than {{ limit }} characters"
      * )
      */
@@ -68,10 +67,10 @@ class BaseUser extends User implements EntityInterface, UserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      *
      * @Assert\Length(
-     *      max = 255,
+     *      max = 50,
      *      maxMessage = "Last name cannot be longer than {{ limit }} characters"
      * )
      */
@@ -79,10 +78,10 @@ class BaseUser extends User implements EntityInterface, UserInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=22, nullable=true)
      *
      * @Assert\Length(
-     *      max = 255,
+     *      max = 22,
      *      maxMessage = "Phone number cannot be longer than {{ limit }} characters"
      * )
      */
