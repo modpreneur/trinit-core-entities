@@ -40,7 +40,6 @@ class BaseUser extends User implements EntityInterface
 
     /**
      * @var string
-     * @ORM\Column(type="string", length=50)
      *
      * @Assert\Length(
      *     min = 2,
