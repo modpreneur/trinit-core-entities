@@ -41,6 +41,22 @@ class BaseUser extends User implements EntityInterface, UserInterface
 
     /**
      * @var string
+     *
+     * @Assert\MinLength(
+     *     limit=2,
+     *     message="Your username must have at least {{ limit }} characters."
+     * )
+     *
+     * @Assert\Length(
+     *      max = 255,
+     *      maxMessage = "First name cannot be longer than {{ limit }} characters"
+     * )
+     *
+     */
+    protected $username;
+
+    /**
+     * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @Assert\Length(
