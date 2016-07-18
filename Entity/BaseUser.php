@@ -149,7 +149,7 @@ class BaseUser extends User implements EntityInterface
      *
      * @Assert\Length(
      *      max = 255,
-     *      maxMessage = "Adress cannot be longer than {{ limit }} characters"
+     *      maxMessage = "Address cannot be longer than {{ limit }} characters"
      * )
      */
     protected $addressLine1;
@@ -160,7 +160,7 @@ class BaseUser extends User implements EntityInterface
      *
      * @Assert\Length(
      *      max = 255,
-     *      maxMessage = "Adress cannot be longer than {{ limit }} characters"
+     *      maxMessage = "Address cannot be longer than {{ limit }} characters"
      * )
      */
     protected $addressLine2;
