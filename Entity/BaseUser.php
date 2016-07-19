@@ -405,6 +405,15 @@ class BaseUser extends User implements EntityInterface
         return ($this->hasRole('ROLE_ADMIN') || $this->hasRole('ROLE_SUPER_ADMIN'));
     }
 
+    /**
+     * Is SuperAdmin.
+     *
+     * @return bool
+     */
+    public function isSuperAdmin()
+    {
+        return $this->hasRole('ROLE_SUPER_ADMIN');
+    }
 
     /**
      * Set Admin.
