@@ -44,8 +44,8 @@ class BaseUser extends User implements EntityInterface
      * @Assert\Length(
      *     min = 2,
      *     max = 50,
-     *     minMessage = "Username name must be at least {{ limit }} characters long",
-     *     maxMessage = "Username name cannot be longer than {{ limit }} characters"
+     *     minMessage = "Username must be at least {{ limit }} characters long",
+     *     maxMessage = "Username cannot be longer than {{ limit }} characters"
      * )
      */
     protected $username;
