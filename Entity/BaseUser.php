@@ -223,17 +223,13 @@ class BaseUser extends User implements EntityInterface
 
 
     /**
-     * Set firstName.
+     * Get id.
      *
-     * @param string $firstName
-     *
-     * @return $this
+     * @return int
      */
-    public function setFirstName($firstName)
+    public function getId()
     {
-        $this->firstName = $firstName;
-
-        return $this;
+        return $this->id;
     }
 
 
@@ -247,6 +243,29 @@ class BaseUser extends User implements EntityInterface
         return $this->firstName;
     }
 
+    /**
+     * Set firstName.
+     *
+     * @param string $firstName
+     *
+     * @return $this
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName.
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
 
     /**
      * Set lastName.
@@ -261,18 +280,6 @@ class BaseUser extends User implements EntityInterface
 
         return $this;
     }
-
-
-    /**
-     * Get lastName.
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
 
     /**
      * Get fullName.
@@ -292,6 +299,15 @@ class BaseUser extends User implements EntityInterface
         }
     }
 
+    /**
+     * Get phoneNumber.
+     *
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phoneNumber;
+    }
 
     /**
      * Set phoneNumber.
@@ -307,28 +323,15 @@ class BaseUser extends User implements EntityInterface
         return $this;
     }
 
-
     /**
-     * Get phoneNumber.
+     * Get website.
      *
      * @return string
      */
-    public function getPhoneNumber()
+    public function getWebsite()
     {
-        return $this->phoneNumber;
+        return $this->website;
     }
-
-
-    /**
-     * Get id.
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
 
     /**
      * Set website.
@@ -344,17 +347,15 @@ class BaseUser extends User implements EntityInterface
         return $this;
     }
 
-
     /**
-     * Get website.
+     * Get avatar.
      *
      * @return string
      */
-    public function getWebsite()
+    public function getAvatar()
     {
-        return $this->website;
+        return $this->avatar;
     }
-
 
     /**
      * Set avatar.
@@ -370,17 +371,15 @@ class BaseUser extends User implements EntityInterface
         return $this;
     }
 
-
     /**
-     * Get avatar.
+     * Get public.
      *
-     * @return string
+     * @return bool
      */
-    public function getAvatar()
+    public function isPublic()
     {
-        return $this->avatar;
+        return $this->public;
     }
-
 
     /**
      * Set public.
@@ -395,18 +394,6 @@ class BaseUser extends User implements EntityInterface
 
         return $this;
     }
-
-
-    /**
-     * Get public.
-     *
-     * @return bool
-     */
-    public function getPublic()
-    {
-        return $this->public;
-    }
-
 
     /**
      * Is Admin.
@@ -448,58 +435,12 @@ class BaseUser extends User implements EntityInterface
 
 
     /**
-     * @param string $addressLine1
-     */
-    public function setAddressLine1($addressLine1)
-    {
-        $this->addressLine1 = $addressLine1;
-    }
-
-
-    /**
      * @return string
      */
-    public function getAddressLine1()
+    public function getCountry()
     {
-        return $this->addressLine1;
+        return $this->country;
     }
-
-
-    /**
-     * @param string $addressLine2
-     */
-    public function setAddressLine2($addressLine2)
-    {
-        $this->addressLine2 = $addressLine2;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getAddressLine2()
-    {
-        return $this->addressLine2;
-    }
-
-
-    /**
-     * @param string $city
-     */
-    public function setCity($city)
-    {
-        $this->city = $city;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->city;
-    }
-
 
     /**
      * @param string $country
@@ -509,33 +450,29 @@ class BaseUser extends User implements EntityInterface
         $this->country = $country;
     }
 
+    /**
+     * @return string
+     */
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
+    /**
+     * @param string $state
+     */
+    public function setState(string $state)
+    {
+        $this->state = $state;
+    }
 
     /**
      * @return string
      */
-    public function getCountry()
+    public function getRegion()
     {
-        return $this->country;
+        return $this->region;
     }
-
-
-    /**
-     * @param string $postalCode
-     */
-    public function setPostalCode($postalCode)
-    {
-        $this->postalCode = $postalCode;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getPostalCode()
-    {
-        return $this->postalCode;
-    }
-
 
     /**
      * @param string $region
@@ -545,13 +482,68 @@ class BaseUser extends User implements EntityInterface
         $this->region = $region;
     }
 
+    /**
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->postalCode;
+    }
+
+    /**
+     * @param string $postalCode
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->postalCode = $postalCode;
+    }
 
     /**
      * @return string
      */
-    public function getRegion()
+    public function getCity()
     {
-        return $this->region;
+        return $this->city;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddressLine1()
+    {
+        return $this->addressLine1;
+    }
+
+    /**
+     * @param string $addressLine1
+     */
+    public function setAddressLine1($addressLine1)
+    {
+        $this->addressLine1 = $addressLine1;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddressLine2()
+    {
+        return $this->addressLine2;
+    }
+
+    /**
+     * @param string $addressLine2
+     */
+    public function setAddressLine2($addressLine2)
+    {
+        $this->addressLine2 = $addressLine2;
     }
 
 
