@@ -122,6 +122,19 @@ class BaseUser extends User implements EntityInterface
     protected $country;
 
     /**
+     * The longest state is 'The State of Rhode Island and Providence Plantations'
+     *
+     * @var string
+     * @ORM\Column(type="string", length=52, nullable=true)
+     *
+     * @Assert\Length(
+     *      max = 52,
+     *      maxMessage = "State cannot be longer than {{ limit }} characters"
+     * )
+     */
+    protected $state;
+
+    /**
      * @var string
      * @ORM\Column(type="string", length=32, nullable=true)
      *
