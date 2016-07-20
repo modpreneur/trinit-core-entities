@@ -453,7 +453,7 @@ class BaseUser extends User implements EntityInterface
     /**
      * @return string
      */
-    public function getState(): string
+    public function getState()
     {
         return $this->state;
     }
