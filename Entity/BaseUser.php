@@ -30,11 +30,6 @@ class BaseUser extends User implements EntityInterface
 
     /**
      * @var string
-     * @Assert\Email(
-     *     checkMX = true,
-     *     checkHost = true,
-     *     strict = true
-     * )
      */
     protected $email;
 
