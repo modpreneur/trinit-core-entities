@@ -238,26 +238,37 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @return string
      */
+    public function getFrequencyString() :string
+    {
+        switch ($this->frequency) {
+            case 7:
+                $str = 'weekly';
+                break;
+            case 14:
+                $str = 'bi-weekly';
+                break;
+            case 30:
+                $str = 'monthly';
+                break;
+            case 91:
+                $str = 'quartaly';
+                break;
+            default:
+                $str = '';
+                break;
+        }
+        return $str;
+    }
+
+    /**
+     * @return string
+     */
     public function __toString() : string
     {
         if ($this->isRecurring()) {
-            switch ($this->frequency) {
-                case 7:
-                    $str = 'weekly';
-                    break;
-                case 14:
-                    $str = 'bi-weekly';
-                    break;
-                case 30:
-                    $str = 'monthly';
-                    break;
-                case 91:
-                    $str = 'quartaly';
-                    break;
-                default:
-                    $str = '';
-            }
-            return ($this->initialPrice + 0) . ' and ' . $this->rebillTimes . ' times ' . ($this->rebillPrice + 0) . ' ' . $str;
+            $str = $this->getFrequencyString();
+            return ($this->initialPrice + 0) . ' and ' .
+                $this->rebillTimes . ' times ' . ($this->rebillPrice + 0) . ' ' . $str;
         } else {
             return $this->getType() . ' ' . $this->initialPrice;
         }
