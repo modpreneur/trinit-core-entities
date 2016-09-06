@@ -547,7 +547,7 @@ class BaseUser extends User implements EntityInterface
      */
     public function __toString() : string
     {
-        return $this->username;
+        return $this->username ?? '';
     }
 
 
