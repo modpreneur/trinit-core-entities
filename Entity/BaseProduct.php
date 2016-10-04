@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
+use Trinity\Component\Core\Interfaces\EntityInterface;
 use Trinity\Component\Core\Interfaces\ProductInterface;
 
 /**
