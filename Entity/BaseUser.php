@@ -7,7 +7,7 @@ use FOS\UserBundle\Model\User;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\Tests\Fixtures\EntityInterface;
+use Trinity\Component\Core\Interfaces\EntityInterface;
 
 /**
  * Class BaseUser.
