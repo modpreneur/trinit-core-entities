@@ -236,9 +236,11 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 
 
     /**
+     * @param bool $upperCase Return in uppercase and with underscores
+     *
      * @return string
      */
-    public function getFrequencyString() :string
+    public function getFrequencyString(bool $upperCase = false) :string
     {
         switch ($this->frequency) {
             case 7:
@@ -257,6 +259,12 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
                 $str = '';
                 break;
         }
+
+        if ($upperCase) {
+            $str = strtoupper($str);
+            $str = str_replace('-', '_', $str);
+        }
+
         return $str;
     }
 
