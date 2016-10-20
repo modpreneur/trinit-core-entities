@@ -41,6 +41,14 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isRecurring;
+
+
+    /**
      * @var float
      *
      * @ORM\Column(type="decimal", precision=7, scale=2)
@@ -218,7 +226,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
      */
     public function isRecurring()
     {
-        return $this->frequency > 0;
+        return $this->isRecurring||$this->frequency !== 0;
     }
 
 
@@ -231,6 +239,10 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
             $this->frequency = null;
             $this->rebillPrice = null;
             $this->rebillTimes = null;
+        }
+        $this->isRecurring = false;
+        if ($type === 'recurring') {
+            $this->isRecurring = true;
         }
     }
 
