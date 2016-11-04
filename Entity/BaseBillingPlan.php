@@ -235,7 +235,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
      */
     public function setType($type)
     {
-        if ($type === 'standard') {
+        if (strtolower($type) === 'standard') {
             $this->frequency = null;
             $this->rebillPrice = null;
             $this->rebillTimes = null;
