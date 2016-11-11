@@ -43,9 +43,8 @@ class BasePaySystem implements EntityInterface
     /**
      * @var BasePaySystemVendor default vendor for given pay system
      *
-     * @ORM\OneToOne(targetEntity="BasePaySystemVendor")
+     * @ORM\OneToOne(targetEntity="PaySystemVendor")
      * @ORM\JoinColumn(referencedColumnName="id", onDelete="SET NULL")
-     *
      */
     protected $defaultVendor;
 
