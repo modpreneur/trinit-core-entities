@@ -40,6 +40,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     protected $product;
 
 
+
     /**
      * @var bool
      *
@@ -51,10 +52,11 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @var float
      *
-     * @ORM\Column(type="decimal", precision=7, scale=2)
+     * @ORM\Column(type="decimal", precision=8, scale=2)
      *
-     * @Assert\LessThan(value=100000)
+     * @Assert\LessThanOrEqual(value=100000)
      * @Assert\NotBlank()
+     * @Assert\NotNull()
      */
     protected $initialPrice;
 
