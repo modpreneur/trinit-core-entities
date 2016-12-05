@@ -20,6 +20,13 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
         ORMBehaviors\Blameable\Blameable,
         ExcludeBlameableTrait;
 
+    const FREQUENCY_BY_STRING = [
+        'weekly' => 7,
+        'bi_weekly' => 14,  //cb requires underscore!!
+        'monthly' => 30,
+        'quartaly' => 91,
+    ];
+
     /**
      * @var int
      *
@@ -228,7 +235,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
      */
     public function isRecurring()
     {
-        return $this->isRecurring||$this->frequency !== 0;
+        return $this->isRecurring;
     }
 
 
