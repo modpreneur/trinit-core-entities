@@ -12,7 +12,7 @@ use Trinity\Component\EntityCore\Traits\ExcludeBlameableTrait;
 
 /**
  * BillingPlan.
- *
+ * @ORM\MappedSuperclass()
  */
 class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 {
@@ -50,10 +50,9 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 
     /**
      * @var bool
-     *
-     * @ORM\Column(type="boolean", nullable=true)
+     * @ORM\Column(type="boolean")
      */
-    private $isRecurring;
+    protected $isRecurring = false;
 
 
     /**
@@ -235,7 +234,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
      */
     public function isRecurring()
     {
-        return $this->isRecurring;
+        return $this->isRecurring || $this->frequency > 0;
     }
 
 
