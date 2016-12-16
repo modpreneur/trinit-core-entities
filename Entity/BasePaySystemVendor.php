@@ -5,6 +5,7 @@ namespace Trinity\Component\EntityCore\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Trinity\Component\Core\Interfaces\EntityInterface;
 
 /**
  * PaySystem.
