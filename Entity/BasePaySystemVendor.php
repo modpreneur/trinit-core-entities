@@ -9,7 +9,7 @@ use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 /**
  * PaySystem.
  */
-class BasePaySystemVendor
+class BasePaySystemVendor implements EntityInterface
 {
     use ORMBehaviors\Timestampable\Timestampable;
 
