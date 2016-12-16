@@ -7,6 +7,7 @@ use Doctrine\ORM\PersistentCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Trinity\Component\Core\Interfaces\EntityInterface;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
+use Trinity\Component\Core\Interfaces\EntityInterface;
 
 /**
  * PaySystem.
