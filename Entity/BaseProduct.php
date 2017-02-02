@@ -18,6 +18,10 @@ class BaseProduct implements EntityInterface, ProductInterface
 {
     use ORMBehaviors\Timestampable\Timestampable;
 
+    const TYPE_DIGITAL  = 'digital';
+    const TYPE_PHYSICAL = 'physical';
+    const TYPE_HYBRID   = 'hybrid';
+
     /**
      * @var int
      *
@@ -39,6 +43,20 @@ class BaseProduct implements EntityInterface, ProductInterface
      * @ORM\Column(type="string", nullable = true)
      */
     protected $description;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", name="product_type", options={"default" : "digital"})
+     */
+    protected $productType;
+
+    /**
+     * BaseProduct constructor.
+     */
+    public function __construct()
+    {
+        $this->productType = self::TYPE_DIGITAL;
+    }
 
 
     /**
@@ -110,5 +128,33 @@ class BaseProduct implements EntityInterface, ProductInterface
     public function __toString() : string
     {
         return (string)$this->getName();
+    }
+
+    /**
+     * Return type of product (digital|physical).
+     *
+     * @return string
+     */
+    public function getProductType(): string
+    {
+        return $this->productType;
+    }
+
+
+    /**
+     * @param string $type
+     *
+     * doc: http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/cookbook/mysql-enums.html
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function setProductType(string $type)
+    {
+        $types = [self::TYPE_DIGITAL, self::TYPE_PHYSICAL, self::TYPE_HYBRID];
+
+        if (!in_array($type, $types)) {
+            throw new \InvalidArgumentException('Invalid productType \'' . $type . '\'');
+        }
+        $this->productType = $type;
     }
 }
