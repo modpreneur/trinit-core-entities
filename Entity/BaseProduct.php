@@ -157,4 +157,19 @@ class BaseProduct implements EntityInterface, ProductInterface
         }
         $this->productType = $type;
     }
+
+    public function isPhysical()
+    {
+        return $this->productType === self::TYPE_PHYSICAL;
+    }
+
+    public function isHybrid()
+    {
+        return $this->productType === self::TYPE_HYBRID;
+    }
+
+    public function isDigital()
+    {
+        return $this->productType === self::TYPE_DIGITAL;
+    }
 }
