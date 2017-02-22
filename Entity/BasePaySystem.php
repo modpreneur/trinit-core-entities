@@ -34,6 +34,15 @@ class BasePaySystem implements EntityInterface
     protected $name;
 
     /**
+     * String which is used in the url(e.g. 'click-bank', 'braintree')
+     *
+     * @ORM\Column(type="string", length=32)
+     *
+     * @Assert\NotBlank()
+     */
+    protected $handle;
+
+    /**
      *
      * @ORM\OneToMany(targetEntity="PaySystemVendor",  mappedBy="paySystem")
      * @ORM\OrderBy({"id" = "ASC"})
@@ -112,6 +121,22 @@ class BasePaySystem implements EntityInterface
     public function setDefaultVendor($defaultVendor)
     {
         $this->defaultVendor = $defaultVendor;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHandle()
+    {
+        return $this->handle;
+    }
+
+    /**
+     * @param mixed string
+     */
+    public function setHandle($handle)
+    {
+        $this->handle = $handle;
     }
 
     /**
