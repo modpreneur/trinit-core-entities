@@ -96,13 +96,6 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
      */
     protected $trial;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    protected $tag;
-
 
     /**
      * Get id.
@@ -259,23 +252,6 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
         if ($type === 'recurring') {
             $this->isRecurring = true;
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function getTag()
-    {
-        return $this->tag;
-    }
-
-
-    /**
-     * @param string $tag
-     */
-    public function setTag($tag)
-    {
-        $this->tag = $tag;
     }
 
     /**
