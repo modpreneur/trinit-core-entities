@@ -40,7 +40,7 @@ class BaseProduct implements EntityInterface, ProductInterface
 
     /**
      * @var string Description of the product
-     * @ORM\Column(type="string", nullable = true)
+     * @ORM\Column(type="text", nullable = true)
      */
     protected $description;
 
