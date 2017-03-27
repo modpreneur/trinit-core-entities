@@ -96,6 +96,14 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
      */
     protected $trial;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=10, nullable=true)
+     * @Assert\Length(min = 2, max = 10)
+     */
+    protected $itemId;
+
 
     /**
      * Get id.
@@ -215,6 +223,22 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
         $this->trial = $trial;
     }
 
+    /**
+     * @return string
+     */
+    public function getItemId()
+    {
+        return $this->itemId;
+    }
+
+    /**
+     * @param string $itemId
+     */
+    public function setItemId(string $itemId)
+    {
+        //CB store case sensitive itemID, but sends in IPN lower
+        $this->itemId = strtolower($itemId);
+    }
 
     /**
      * @return string
@@ -253,7 +277,6 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
             $this->isRecurring = true;
         }
     }
-
 
     /**
      * @param bool $upperCase Return in uppercase and with underscores
