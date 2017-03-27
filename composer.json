@@ -19,7 +19,7 @@
     "doctrine/data-fixtures": "~1",
     "symfony/monolog-bundle": "~2.8 | ~3.0",
     "symfony/validator": "~3",
-    "jms-serializer/serializer": "~1",
+    "jms/serializer": "~1",
     "trinity/core-interfaces": "dev-master"
   },
 
