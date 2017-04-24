@@ -99,8 +99,8 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=10, nullable=true)
-     * @Assert\Length(min = 2, max = 10)
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(min = 2, max = 255)
      */
     protected $itemId;
 
