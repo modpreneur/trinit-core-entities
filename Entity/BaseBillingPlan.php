@@ -67,7 +67,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     protected $initialPrice;
 
     /**
-     * @var ?float
+     * @var float|null
      *
      * @ORM\Column(type="decimal", precision=7, scale=2, nullable=true)
      *
@@ -76,28 +76,28 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     protected $rebillPrice;
 
     /**
-     * @var ?int
+     * @var int|null
      *
      * @ORM\Column(type="smallint", nullable=true)
      */
     protected $frequency;
 
     /**
-     * @var ?int
+     * @var int|null
      *
      * @ORM\Column(type="smallint", nullable=true)
      */
     protected $rebillTimes;
 
     /**
-     * @var ?int
+     * @var int|null
      *
      * @ORM\Column(type="smallint", nullable=true)
      */
     protected $trial;
 
     /**
-     * @var ?string
+     * @var string|null
      *
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(min = 2, max = 255)
