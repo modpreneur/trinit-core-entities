@@ -67,7 +67,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     protected $initialPrice;
 
     /**
-     * @var float
+     * @var ?float
      *
      * @ORM\Column(type="decimal", precision=7, scale=2, nullable=true)
      *
@@ -76,28 +76,28 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     protected $rebillPrice;
 
     /**
-     * @var int
+     * @var ?int
      *
      * @ORM\Column(type="smallint", nullable=true)
      */
     protected $frequency;
 
     /**
-     * @var int
+     * @var ?int
      *
      * @ORM\Column(type="smallint", nullable=true)
      */
     protected $rebillTimes;
 
     /**
-     * @var int
+     * @var ?int
      *
      * @ORM\Column(type="smallint", nullable=true)
      */
     protected $trial;
 
     /**
-     * @var string
+     * @var ?string
      *
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\Length(min = 2, max = 255)
@@ -108,18 +108,18 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * Get id.
      *
-     * @return int
+     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getFrequency()
+    public function getFrequency(): ?int
     {
         return $this->frequency;
     }
@@ -128,7 +128,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param int $frequency
      */
-    public function setFrequency($frequency)
+    public function setFrequency(int $frequency): void
     {
         $this->frequency = $frequency;
     }
@@ -137,7 +137,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @return float
      */
-    public function getInitialPrice()
+    public function getInitialPrice(): float
     {
         return $this->initialPrice;
     }
@@ -146,7 +146,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param float $initialPrice
      */
-    public function setInitialPrice($initialPrice)
+    public function setInitialPrice(float $initialPrice): void
     {
         $this->initialPrice = $initialPrice;
     }
@@ -164,16 +164,16 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param BaseProduct $product
      */
-    public function setProduct($product)
+    public function setProduct($product): void
     {
         $this->product = $product;
     }
 
 
     /**
-     * @return float
+     * @return float|null
      */
-    public function getRebillPrice()
+    public function getRebillPrice(): ?float
     {
         return $this->rebillPrice;
     }
@@ -182,16 +182,16 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param float $rebillPrice
      */
-    public function setRebillPrice($rebillPrice)
+    public function setRebillPrice(float $rebillPrice): void
     {
         $this->rebillPrice = $rebillPrice;
     }
 
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getRebillTimes()
+    public function getRebillTimes(): ?int
     {
         return $this->rebillTimes;
     }
@@ -200,16 +200,16 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param int $rebillTimes
      */
-    public function setRebillTimes($rebillTimes)
+    public function setRebillTimes(int $rebillTimes): void
     {
         $this->rebillTimes = $rebillTimes;
     }
 
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getTrial()
+    public function getTrial(): ?int
     {
         return $this->trial;
     }
@@ -218,15 +218,15 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param int $trial
      */
-    public function setTrial($trial)
+    public function setTrial(int $trial): void
     {
         $this->trial = $trial;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getItemId()
+    public function getItemId(): ?string
     {
         return $this->itemId;
     }
@@ -234,7 +234,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param string $itemId
      */
-    public function setItemId(string $itemId)
+    public function setItemId(string $itemId): void
     {
         //CB store case sensitive itemID, but sends in IPN lower
         $this->itemId = strtolower($itemId);
@@ -243,20 +243,19 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         if ($this->frequency > 0) {
             return 'recurring';
-        } else {
-            return 'standard';
         }
+        return 'standard';
     }
 
 
     /**
      * @return bool
      */
-    public function isRecurring()
+    public function isRecurring(): bool
     {
         return $this->isRecurring || $this->frequency > 0;
     }
@@ -265,7 +264,7 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type): void
     {
         if (strtolower($type) === 'standard') {
             $this->frequency = null;
@@ -320,8 +319,8 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
             $str = $this->getFrequencyString();
             return ($this->initialPrice + 0) . ' and ' .
                 $this->rebillTimes . ' times ' . ($this->rebillPrice + 0) . ' ' . $str;
-        } else {
-            return $this->getType() . ' ' . $this->initialPrice;
         }
+
+        return $this->getType() . ' ' . $this->initialPrice;
     }
 }
