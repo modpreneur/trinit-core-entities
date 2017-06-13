@@ -135,12 +135,11 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 
 
     /**
-     * Due to new form it may return null
-     * @return null|float
+     * @return float
      */
-    public function getInitialPrice(): ?float
+    public function getInitialPrice(): float
     {
-        return $this->initialPrice;
+        return (float)$this->initialPrice;
     }
 
 
@@ -172,11 +171,11 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
 
 
     /**
-     * @return float|null
+     * @return float
      */
-    public function getRebillPrice(): ?float
+    public function getRebillPrice(): float
     {
-        return $this->rebillPrice;
+        return (float)$this->rebillPrice;
     }
 
 
