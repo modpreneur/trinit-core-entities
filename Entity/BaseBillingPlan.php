@@ -173,16 +173,16 @@ class BaseBillingPlan implements EntityInterface, BillingPlanInterface
     /**
      * @return float
      */
-    public function getRebillPrice(): float
+    public function getRebillPrice(): ?float
     {
         return (float)$this->rebillPrice;
     }
 
 
     /**
-     * @param float $rebillPrice
+     * @param float|null $rebillPrice
      */
-    public function setRebillPrice(float $rebillPrice): void
+    public function setRebillPrice(?float $rebillPrice): void
     {
         $this->rebillPrice = $rebillPrice;
     }
